@@ -7,6 +7,7 @@ See the [main Module readme](https://github.com/microsoft/OpenEduAnalytics/tree/
 | [Canvas LMS REST API documentation](https://canvas.instructure.com/doc/api/index.html) | Summary and details of various resources that can be accessed through the Canvas LMS API. |
 | [Canvas API Endpoint Attributes](https://canvas.instructure.com/doc/api/file.endpoint_attributes.html) | Reference page of the Canvas API endpoint attributes. |
 | [Canvas API IDs](https://canvas.instructure.com/doc/api/file.object_ids.html) | Reference page for specifications on the Canvas API Object IDs, SIS IDs, and special IDs. |
+| [Canvas API - All Resources](https://canvas.instructure.com/doc/api/all_resources.html) | Reference page for a comprehensive table of all resources that can be queried through the Canvas API. |
 
 ## Potentially Useful/Main Tables
 

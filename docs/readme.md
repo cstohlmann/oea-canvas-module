@@ -3,7 +3,7 @@
 See the [main Module readme](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas) for complete documentation of this module and technical assets. Some useful links are listed below for easy access.
 
 | Resource | Description |
-| --- | --- |
+| --- | --- | 
 | [Canvas LMS REST API documentation](https://canvas.instructure.com/doc/api/index.html) | Summary and details of various resources that can be accessed through the Canvas LMS API. |
 | [Canvas API Endpoint Attributes](https://canvas.instructure.com/doc/api/file.endpoint_attributes.html) | Reference page of the Canvas API endpoint attributes. |
 | [Canvas API IDs](https://canvas.instructure.com/doc/api/file.object_ids.html) | Reference page for specifications on the Canvas API Object IDs, SIS IDs, and special IDs. |
@@ -13,12 +13,12 @@ See the [main Module readme](https://github.com/microsoft/OpenEduAnalytics/tree/
 
 ### User-Related Tables
 
-| User Tables | Description |
-| --- | --- |
-| [Canvas Resource: Names and Role](https://canvas.instructure.com/doc/api/names_and_role.html#method.lti/ims/names_and_roles.course_index) | Details on the Canvas "Names and Role" resource table. |
-| [Canvas Resource: List Courses for a User](https://canvas.instructure.com/doc/api/all_resources.html#method.courses.user_index) | Details on the how to get a list of courses for a particular user. |
-| [Canvas Resource: List Users in Course](https://canvas.instructure.com/doc/api/courses.html#method.courses.users) | Details on the how to get a list of all users for a particular course. |
-| [Canvas Resource: Get Bulk User Progress](https://canvas.instructure.com/doc/api/all_resources.html#method.courses.bulk_user_progress) | Details on the how to get progress info for all users enrolled in a particular course. |
+| User Tables | Description | API Call |
+| --- | --- | --- |
+| [Canvas Resource: Names and Role](https://canvas.instructure.com/doc/api/names_and_role.html#method.lti/ims/names_and_roles.course_index) | Details on the Canvas "Names and Role" resource table. | ```GET /api/lti/courses/:course_id/names_and_roles``` | 
+| [Canvas Resource: List Courses for a User](https://canvas.instructure.com/doc/api/all_resources.html#method.courses.user_index) | Details on the how to get a list of courses for a particular user. | |
+| [Canvas Resource: List Users in Course](https://canvas.instructure.com/doc/api/courses.html#method.courses.users) | Details on the how to get a list of all users for a particular course. | |
+| [Canvas Resource: Get Bulk User Progress](https://canvas.instructure.com/doc/api/all_resources.html#method.courses.bulk_user_progress) | Details on the how to get progress info for all users enrolled in a particular course. | |
 
 ### Section-Related Tables
 

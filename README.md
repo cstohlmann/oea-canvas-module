@@ -2,33 +2,23 @@
 
 # Canvas Module
 
-### [NEEDS TO BE EDITED]
-This module allows you to source data from the [Canvas Data v1 API](https://portal.inshosteddata.com/docs/api) including course information, user activity data, assignment results, etc.
+[Canvas](https://www.instructure.com/canvas) is a K-12 and higher education Learning Management System (LMS), which offers a web-based solution to organizing student courses, learning progress and outcomes. This OEA Canvas module, originally developed by [Tasmania Department of Education](https://www.decyp.tas.gov.au/) in Tasmania, Australia, allows you to source data from the [Canvas Data v1 API](https://portal.inshosteddata.com/docs/api) <strong><em>[<- CHECK IF THIS IS STILL RELEVANT]</strong></em>. This enables administrators to retrieve data on course information, user activity data, assignment results, etc. The scope of this module is directed to pulling learning progress/outcomes and digital activity for analysis, through the use of the tables defined below.
 
-It was originally developed by the Department of Education Tasmania.
-
+### [VISUAL NEEDS TO BE CHANGED]
 <p align="center">
   <img src="https://github.com/cstohlmann/OpenEduAnalytics/blob/main/modules/module_catalog/Clever/docs/images/clever_data_ingestion_map.png" alt="Clever Data Ingestion Visual"/>
 </p>
 
 ## Problem Statement and Module Impact
-<strong><em>[WHAT TASMANIA HAD]</strong></em>
+Education instutions increasingly rely on virtual learning environments (VLEs) such as Canvas to deliver course content to students, perform both formative and summative assessments, and to support communication between staff and students when studying remotely. For many institutions, this became even more relevent with the COVID-19 pandemic given the need to support study-from-home scenarios where students may no longer be physically present in a classroom. Although the need for digital learning is no longer as necessary, there is still demand and significance for alternative forms of learning (e.g. website-use, digital application uses, etc.)
 
-Education instutions increasingly rely on virtual learning environments (VLEs) such as Canvas to deliver course content to students, perform both formative and summative assessments, and to support communication between staff and students when studying remotely. For many institutions, this has become even more relevent with the COVID-19 pandemic given the need to support study-from-home scenarios where students may no longer be physically present in a classroom.
-
-This module will provide you access to all tables present in [Canvas Data v1](https://portal.inshosteddata.com/docs) including user activity, course information, assessment results, etc. Examples where you might use this data include:
+This OEA Canvas module can aid any Canvas-using education systems in bringing the data types described below to their Azure data lake for analysis. The [module Synapse pipeline](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/pipeline) will connect to the [Canvas API](https://canvas.instructure.com/doc/api/index.html) and pull JSON files for multiple student learning-related data tables. The [module Power BI template](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/powerbi) allows users to immediately explore the data and start developing custom dashboards enabling education systems to better understand the learning progress of students. <strong><em>[CHECK TO SEE WHETHER THIS IS STILL RELEVANT ->]</strong></em> This module will also give you access to all tables present in [Canvas Data v1](https://portal.inshosteddata.com/docs) including user activity, course information, assessment results, etc. Examples where you might use this data include:
 - Student/course engagement reporting - e.g. are students particpating in courses, do they need additional support, etc.
-- Assessment reporting - average grade across school/region/other boundary (perhaps correlated with other data).
+- Assessment reporting - average grades across schools, regions, or other boundaries (perhaps correlated with other data).
 - VLE usage across teachers/school/region etc. - are some areas 'championing' digital learning, or do others need additional training & support.
 
-<strong><em>[CLEVER MODULE EX.]</strong></em>
-
-Collecting data related to digital learning activity is crucial to understanding the academic engagement of students. As digital learning becomes more prevalent, understanding the digital resources that students use is fundamental to supporting student success, both inside and outside of the classroom. 
-
-This Clever OEA module will aid K-12 education systems in bringing digital learning activity data to their Azure data lake for analysis. The [module Synapse pipeline](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Clever/pipeline) will connect to Clever's SFTP server and pull csv files from daily participation and resource usage reports process the data so it is standardized and queryable. The [module Power BI template](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Clever/powerbi) allows users to immediately explore the data and start developing custom dashboards enabling education systems to better understand the digital learning environment of students. 
-
 ## Module Setup Instructions
-<strong><em>[WHAT TASMANIA HAD]</strong></em>
+<strong><em>[WHAT TASMANIA HAD; PROB WILL CHANGE SIGNIFICANTLY]</strong></em>
 
 - To use the module, you will require:
   - An instance of Canvas with the data API's enabled.
@@ -133,7 +123,7 @@ While this module leverages Clever [Participation Reports](https://support.cleve
 
 The OEA Canvas module [welcomes contributions.](https://github.com/microsoft/OpenEduAnalytics/blob/main/docs/license/CONTRIBUTING.md) 
 
-This module was developed by the [Tasmania Department of Education](https://www.decyp.tas.gov.au/) in Tasmania, Australia, and [Kwantum Analytics](https://www.kwantumedu.com/). The architecture and reference implementation for all modules is built on [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/synapse-analytics/) - with [Azure Data Lake Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) as the storage backbone,  and [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/) providing the role-based access control.
+This module was developed by [Tasmania Department of Education](https://www.decyp.tas.gov.au/) in Tasmania, Australia, and [Kwantum Analytics](https://www.kwantumedu.com/). The architecture and reference implementation for all modules is built on [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/synapse-analytics/) - with [Azure Data Lake Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) as the storage backbone,  and [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/) providing the role-based access control.
 
 # Legal Notices
 

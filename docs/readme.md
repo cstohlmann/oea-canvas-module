@@ -44,7 +44,7 @@ See the [main Module readme](https://github.com/microsoft/OpenEduAnalytics/tree/
 
 | Activity Stream Tables | Description | API Call | Microsoft-Documented as Valuable | Tables to start with |
 | --- | --- | --- | --- | --- |
-| [Canvas Resource: List the Activity Stream](https://canvas.instructure.com/doc/api/all_resources.html#method.users.activity_stream) | Details on how to get a paginated list of the current user's global activity stream. | ```GET /api/v1/users/activity_stream``` | [ ] | [x] |
+| [Canvas Resource: List the Activity Stream](https://canvas.instructure.com/doc/api/all_resources.html#method.users.activity_stream) | Details on how to get a paginated list of the current user's global activity stream. | ```GET /api/v1/users/activity_stream``` | [ ] | [x?] |
 | [Canvas Resource: Activity Stream Summary](https://canvas.instructure.com/doc/api/all_resources.html#method.users.activity_stream_summary) | Details on how to get a summary list of the current user's global activity stream. | ```GET /api/v1/users/self/activity_stream/summary``` | [ ] | [?] |
 
 ### Assignment-Related Tables

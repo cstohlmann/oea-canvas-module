@@ -30,7 +30,7 @@ See the [main Module readme](https://github.com/microsoft/OpenEduAnalytics/tree/
 
 | Course Tables | Description | API Call | Microsoft-Documented as Valuable | Tables to start with |
 | --- | --- | --- | --- | --- |
-| [Canvas Resource: List Your Courses](https://canvas.instructure.com/doc/api/all_resources.html#method.courses.index) | Details on how to get a paginated list of active courses for the current user. | ```GET /api/v1/courses``` | [x] | [?] |
+| [Canvas Resource: List Your Courses](https://canvas.instructure.com/doc/api/all_resources.html#method.courses.index) | Details on how to get a paginated list of active courses for the current user. | ```GET /api/v1/courses``` | [x] | [x]... prob |
 | [Canvas Resource: List All Courses](https://canvas.instructure.com/doc/api/all_resources.html#method.search.all_courses) | Details on how to get a paginated list of all courses visible in the public index. | ```GET /api/v1/search/all_courses``` | [ ] | [ ] |
 
 ### Quiz-Related Tables

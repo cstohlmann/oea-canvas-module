@@ -68,62 +68,27 @@ This module imports digital activity, learning outcomes, and roster data for an 
 See the [module test data page](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/test_data) for details on data format and contents.
   
 ## Module Components
-<strong><em>[WHAT TASMANIA HAD]</strong></em>
-
-The nature of the Canvas Data API makes it difficult to query directly from Synapse in a reliable and repeatable way. As such, this module makes use of several Azure Services outside of the standard notebook/pipeline structure. Components include:
-
-1. An [Azure Durable Function](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas_Data/function) instance that provides:
-   - Functions to compare Canvas Data to stage1np data and identify missing files (deltas).
-   - Functions to download new files and delete old (obsolete) ones.
-   - Type translation generators that provide type translators for the ADF Copy Activity.
-2. Several [Pipelines](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas_Data/pipeline) for orchestrating & scheduling the data load into the lake, and the transform into stage2np.
-3. A sample [notebook](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas_Data/notebook) that creates a user activity table in stage3np.
-
-<strong><em>[CLEVER MODULE EX.]</strong></em>
-
 Out-of-the box assets for this OEA module include: 
-1. [Test Data](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Clever/test_data): Artificially generated test data which supports the module pipeline and Power BI template. Test data matches the Clever [Participation Reports](https://support.clever.com/hc/s/articles/360049642311) format exactly.
-2. [Pipeline Template](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Clever/pipeline): One main pipeline template which lands data into the Stage 1 data lake (for raw data) and processes into the Stage 2 data lake (for structured, queryable data). Stage 2 data is then made available via a serverless SQL endpoint.
-3. [Notebooks](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Clever/notebook): 
-    - [Clever_py.ipynb](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Clever/notebook/Clever_py.ipynb): A module python class notebook that defines the data schemas and basic functions of data ingestion and processing from Stage 1 to Stage 2.
-    - [Clever_module_ingestion.ipynb](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Clever/notebook/Clever_module_ingestion.ipynb): Module data ingestion notebook which depends on the module class. The pipeline template incorporates this notebook. 
-4. [PowerBI template](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Clever/powerbi): A Power BI template which explores data in a basic way. The Power BI file is pre-loaded with test data making it easy to quickly interact with Clever data. See instructions on the [module PowerBI page](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Clever/powerbi) to switch the dashboard data source to direct query from your Synapse workspace. Screenshots of the Power BI template are below.
+1. [Test Data](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/test_data): One artificially generated test data set, which supports the module pipeline and Power BI template. Test data matches the [Canvas API tables](https://data-access-platform-api.s3.amazonaws.com/index.html#tag/API) format. This asset also includes a metadata.csv which is responsible for schema definitions and the pseudonymization process.
+    - [Higher Education Test Data](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/test_data/hed_test_data): Test data formatted as a higher education system.
+    - [metadata.csv](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Canvas/test_data/metadata.csv): Metadata CSV to support module data ingestion and refining for all Moodle tables contained in the module.
+2. [Pipeline Template](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/pipeline): One main pipeline template which lands data into the data lake in Stage 1 (for raw data) and processes into the Stage 2 data lake (for structured, queryable data). Stage 2 data is then made available via a serverless SQL endpoint.
+3. [Notebooks](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/notebook): Two sets of notebooks that can be used for either data exploration, or necessary for ingesting and refining data in the pipeline; notebooks are automatically installed upon running the setup script.
+    - [Canvas_example.ipynb](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Canvas/notebook/Canvas_example.ipynb): A module example notebook that demonstrates the basic functions of landing raw test data to Stage 1, ingestion from Stage 1 to Stage 2/Ingested, and refinement to Stage2/Refined.
+    - [Canvas Pipeline-Supporting Notebooks](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Canvas/notebook): Module-specific notebooks that ingests the Moodle tables and refines the dataset.
+4. [PowerBI Template](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/powerbi): <em>Coming soon.</em>
 
-Dashboard Explanation  | Dashboard Usage Summary
+Dashboard Explanation | Digital Learning Outcomes Summary
 :-------------------------:|:-------------------------:
-![](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Clever/docs/images/Clever%20Module%20Explanation%20Page.png) |  ![](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Clever/docs/images/Clever%20Module%20Dashboard%20Sample.png)  
-
+![](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Microsoft_Graph/docs/images/v0.1/coming_soon_visual.png) |  ![](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Microsoft_Graph/docs/images/v0.1/coming_soon_visual.png)   
 ## Additional Information
-
-<strong><em>[WHAT TASMANIA HAD]</strong></em>
-
-### **Approximate Hosting Costs**
-
-The Azure Durable Function does come with a hosting cost in Azure however it is generally fairly minimal when using the consumption model (which is the default).
-
-In our environment, most days did not exceed $0.20 USD per day. A full reload of the Canvas data cost ~$0.30 USD. For most use cases we anticipate the Azure Function and associated function storage would not exceed ~$5-10 USD per month. Costs for your environment will vary based on number of active staff/students in the platform.
-
-Note the pricing does not consider the cost of hosting data in your Data Lake, Synapse overheads, spark pools, etc. - just the additional function and associated storage.
-
-As always, it is suggested you monitor and review costs within your own environment.
-
-### **Performance**
-
-The Azure Durable Function has been designed with asynchronous I/O and scalability in mind. It does not download files directly, and instead invokes [start_copy_from_url](https://docs.microsoft.com/en-us/azure/developer/python/sdk/storage/azure-storage-blob/azure.storage.blob.blobclient?view=storage-py-v12#start-copy-from-url-source-url--metadata-none--incremental-copy-false----kwargs-) using the Python SDK.
-
-In our testing, the function was able to download ~7 years worth of data (200 GB) in under 10 minutes. Processing the data into stage2 took 1-2 hours total due to the type conversion from CSV (strings) to Parquet.
-
-Loads are incremental (only new/changes files are processed), so subsequent runs are significantly quicker - typically in the order of minutes.
-
-<strong><em>[CLEVER MODULE EX.]</strong></em>
-
-While this module leverages Clever [Participation Reports](https://support.clever.com/hc/s/articles/360049642311), more data is available via the [Clever API](https://dev.clever.com/docs/api-overview) feed.
 
 | Resource | Description |
 | --- | --- |
-| [Overview of Clever API](https://dev.clever.com/docs/api-overview) | Intro to Clever API, what it can do, and how it can be used. |
-| [Clever API v3.0 Data Schema](https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vTY8WSC--TBok-cHjG8itGyqnrj7sCkfyWVzIxeLybwzryW01L9qD8xwhoJDBlWrjOkciOXV34G9ejH/pubhtml) | Landing page of documentation on the v3.0 Clever data schema. |
-
+| [Overview of Canvas](https://www.instructure.com/canvas) | Intro to Canvas, what the LMS does, and what it can provide. |
+| [Microsoft 365 with Canvas](https://community.canvaslms.com/t5/Partner-Listings/Partner-Listing-Microsoft-Education/ta-p/437376) | Reference of Canvas can be used to interact with Microsoft 365 products. |
+| [Camvas REST API Table-Schemas Information](https://data-access-platform-api.s3.amazonaws.com/index.html#tag/API) | Reference to learn about the schema details for Canvas tables landed into stage 1. 
+  
 ## Contributions from the Community
 
 The OEA Canvas module [welcomes contributions.](https://github.com/microsoft/OpenEduAnalytics/blob/main/docs/license/CONTRIBUTING.md) 

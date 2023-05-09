@@ -1,3 +1,5 @@
+> **Note:** This module is currently unreleased, and is dependent on the OEA framework v0.8rc1
+
 <img align="right" height="75" src="https://github.com/microsoft/OpenEduAnalytics/blob/main/docs/pics/oea-logo-nobg.png">
 
 # Canvas Module

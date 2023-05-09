@@ -87,6 +87,7 @@ Dashboard Explanation | Digital Learning Outcomes Summary
 | --- | --- |
 | [Overview of Canvas](https://www.instructure.com/canvas) | Intro to Canvas, what the LMS does, and what it can provide. |
 | [Microsoft 365 with Canvas](https://community.canvaslms.com/t5/Partner-Listings/Partner-Listing-Microsoft-Education/ta-p/437376) | Reference of Canvas can be used to interact with Microsoft 365 products. |
+| [Camvas Guides](https://community.canvaslms.com/t5/Canvas-Guides/ct-p/canvas_guides) | Reference documentation around guidance for Canvas implementation and use. | 
 | [Camvas LMS - REST API and Extensions Documentation](https://canvas.instructure.com/doc/api/all_resources.html) | Reference for all Canvas API Resources with additional schema details for tables. | 
 | [Camvas API Table-Schemas Information](https://data-access-platform-api.s3.amazonaws.com/index.html#tag/API) | Reference to learn about the schema details for Canvas tables landed into stage 1. | 
 

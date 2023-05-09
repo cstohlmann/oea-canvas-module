@@ -8,7 +8,7 @@
 
 
 <p align="center">
-  <img src="https://github.com/cstohlmann/oea-canvas-module/blob/main/docs/images/canvas_module_v0.2_overview.png" alt="Clever Data Ingestion Visual"/>
+  <img src="https://github.com/cstohlmann/oea-canvas-module/blob/main/docs/images/canvas_module_v0.2_overview.png" alt="Clever Module v0.2 Overview Visual"/>
 </p>
 
 ## Problem Statement and Module Impact
@@ -30,24 +30,33 @@ This OEA Canvas module can aid any Canvas-using education systems in bringing th
 
 Please see the [Setup docs](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Canvas_Data/docs/Setup.md) for deployment instructions.
 
-#### ASSUMING THE PROCESS IS THE SAME FOR MODULE DEPLOYMENT AS OTHER MODULES
 <p align="center">
-  <img src="https://github.com/cstohlmann/oea-canvas-module/blob/main/docs/images/canvas_module_setup_instructions_visual.png" alt="Canvas Setup Instructions"/>
+  <img src="https://github.com/cstohlmann/oea-canvas-module/blob/main/docs/images/canvas_module_v0.2_setup_instructions.png" alt="Canvas v2.0 Setup Instructions"/>
 </p>
 
-<ins><strong>Preparation:</ins></strong> Ensure you have proper [Azure subscription and credentials](https://github.com/microsoft/OpenEduAnalytics/tree/main/framework) and setup [v0.6.1 of the OEA framework](https://github.com/microsoft/OpenEduAnalytics/tree/main/framework#setup-of-framework-assets). This will include v0.6.1 of the [OEA python class](https://github.com/microsoft/OpenEduAnalytics/blob/main/framework/synapse/notebook/OEA_py.ipynb). Note: This package will be updated to accommodate v0.7. 
+<ins><strong>Preparation:</ins></strong> This module currently leans on v0.8rc1 of the OEA framework. Ensure you have proper [Azure subscription and credentials](https://github.com/microsoft/OpenEduAnalytics/tree/main/framework) and setup of the [OEA framework](https://github.com/microsoft/OpenEduAnalytics/tree/main/framework#setup-of-framework-assets). This will include v0.8rc1 of the [OEA python class](https://github.com/microsoft/OpenEduAnalytics/blob/main/framework/synapse/notebook/OEA_py.ipynb). 
 
-1. Import the [Canvas module class notebook](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Canvas/notebook/Canvas_py.ipynb) into your Synapse workspace. This notebook contains data schema information and data writing functions needed to support module pipelines. 
-2. Import the [Canvas pipeline template](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Canvas/pipeline/canvas_pipeline_template.zip) into your Synapse workspace and execute the pipeline. See the [module pipeline page](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/pipeline) for detailed instructions.
-3. Verify that the module pipeline landed data into stage 1 and 2 and SQL databases were created. See the [module pipeline page](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/pipeline) for detailed instructions.
-4. Download the module [module Power BI template file](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/powerbi) file. Module test data is already imported into the Power BI. See the [module Power BI page](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/powerbi) for instructions for switching the Power BI test data source to import from your Synapse workspace Clever data source. 
+<ins><strong>Note:</ins></strong> 
+All the steps outlined below are applicable to deployment of this module with [test data](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/test_data). However, if you are doing a production deployment, this module currently does not provide guidance and assets will be need to be elevated for interactions with production data, depending on the Canvas database structure for an education system.
 
-#### Note: 
-The above instructions will setup the Canvas OEA module using the [module test data](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/test_data), but the same pipeline can be used for production data. See the [module pipeline page](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/pipeline) for instructions on switching the pipeline data source to production data from the Canvas API.
+1. Run the [setup.sh script](https://github.com/Microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Canvas/setup.sh)
+    * Open cloud shell in your Azure subscription (use ctrl+click on the button below to open in a new page)\
+[![Launch Cloud Shell](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/launchcloudshell.png "Launch Cloud Shell")](https://shell.azure.com/bash)
+    * Download the module release to your Azure clouddrive \
+`cd clouddrive`\
+`wget https://github.com/microsoft/OpenEduAnalytics/releases/download/module_Canvas_v0.2ar/module_Canvas_v0.2ar.zip`\
+`unzip ./module_Canvas_v0.2ar.zip`
+    * Run the setup script like this (substitute "mysynapseworkspacename" with your synapse workspace name, which must be less than 13 characters and can only contain letters and numbers - e.g. syn-oea-cisd3v07kw1): \
+`./module_Canvas_v0.2ar/setup.sh mysynapseworkspacename`) to install this package into your own environment.
+2. Run the [Canvas module main pipeline template](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/pipeline) or the [Canvas_example notebook](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Canvas/notebook/Canvas_example.ipynb) into your Synapse workspace to see the functionality of module assets.
+     * It is recommended that you first run the module example notebook to understanding the methods of data processing, before running the pipeline. Although, running either the example notebook or the main pipeline accomplish the same processes.
+3. Verify that the module pipeline landed data into stage 1 and 2, and SQL and lake databases were created. See the [module pipeline page](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/pipeline) for detailed instructions.
+4. Download the [module Power BI template file](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/powerbi). Module test data is already imported into the Power BI. See the [module Power BI page](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/powerbi) page for details and instructions for switching the Power BI template data source, to import from your Synapse workspace data source.
+   * <strong>Note</strong>: This step is still under development (that is, this module currently does not contain a specific Power BI dashboard). 
+ 
+#### OEA Learning Analytics Schema:
 
-#### OEA Digital Engagement Schema:
-
-After completing the setup of this module, these Canvas schemas can be transformed into the [OEA schema standard for digital engagement](https://github.com/microsoft/OpenEduAnalytics/tree/main/schemas/schema_catalog/Digital_Engagement_Schema). Refer to the documentation and assets to see how this module can be extended and standardized for OEA package-use.
+After completing the setup of this module, the Moodle activity schema can be transformed into the [OEA schema standard for learning analytics](https://github.com/microsoft/OpenEduAnalytics/tree/main/schemas/schema_catalog/Learning_Analytics). Refer to the documentation and assets to see how this module can be extended and standardized for OEA package-use.
 
 ## Data Sources
 <strong><em>[WHAT TASMANIA HAD]</strong></em>

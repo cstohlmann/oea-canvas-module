@@ -56,22 +56,17 @@ All the steps outlined below are applicable to deployment of this module with [t
  
 #### OEA Learning Analytics Schema:
 
-After completing the setup of this module, the Moodle activity schema can be transformed into the [OEA schema standard for learning analytics](https://github.com/microsoft/OpenEduAnalytics/tree/main/schemas/schema_catalog/Learning_Analytics). Refer to the documentation and assets to see how this module can be extended and standardized for OEA package-use.
+After completing the setup of this module, the Canvas activity schema can be transformed into the [OEA schema standard for learning analytics](https://github.com/microsoft/OpenEduAnalytics/tree/main/schemas/schema_catalog/Learning_Analytics). Refer to the documentation and assets to see how this module can be extended and standardized for OEA package-use.
 
 ## Data Sources
-<strong><em>[WHAT TASMANIA HAD]</strong></em>
 
-- This module provides access to all [Canvas Data v1](https://portal.inshosteddata.com/docs) tables in stage2np. Files are currently stored in parquet (not Delta) format to keep the load process simple.
-- Note that the tables are **not** pseuodonymized (e.g. available in stage2p) just yet. An updated pipeline will be provided in a later release for this.
+This module imports digital activity, learning outcomes, and roster data for an education system via queries from the Canvas API.
+- [Canvas API Table-Schemas Information](https://data-access-platform-api.s3.amazonaws.com/index.html#tag/Query) provides a reference of the schemas for all tables that can be queried from the Canvas API.
+- The Canvas API data source is used for ingesting Moodle digital activity, learning outcomes and SIS data, as explained above. There are also additional Canvas tables that can be ingested upon creating your own pipeline, or adding to the pipeline template provided.
+- The data ingested is expected to be formatted as JSON files (per table) from the Canvas API.
 
-<strong><em>[CLEVER MODULE EX.]</strong></em>
-
-This module imports data which matches the format of the two [Clever Participation Reports](https://support.clever.com/hc/s/articles/360049642311).
-- [Daily Participation Report](https://support.clever.com/hc/s/articles/360049642311?language=en_US#step2) provides a daily snapshot that summarizes usage for students, teachers, and staff in your district, including those that may be inactive. 
-- [Resource Usage Report](https://support.clever.com/hc/s/articles/360049642311?language=en_US#h_7698d144-7ceb-4d63-88b8-e9ca2aa378d2) provides a daily snapshot of each resource accessed by a user on a given day and are available for active students, teachers, and staff. 
-
-See the [module test data page](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Clever/test_data) for details on data format and contents.
-
+See the [module test data page](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/test_data) for details on data format and contents.
+  
 ## Module Components
 <strong><em>[WHAT TASMANIA HAD]</strong></em>
 

@@ -13,8 +13,11 @@ See full details on the [Canvas API Resources](https://canvas.instructure.com/do
 
 | Domain | Table Name | Description |
 |-----------|-----------|-----------|
-| Enrollment API | [user_enrollments](https://canvas.instructure.com/doc/api/enrollments.html) | The relationship between a user and a course. That is, a list of users enrolled in a particular class. |
-|  |  |  |
-|  |  |  |
+|  | [assignment_groups](https://data-access-platform-api.s3.amazonaws.com/index.html#tag/assignment_groups) |  |
+|  | [assignments](https://data-access-platform-api.s3.amazonaws.com/index.html#tag/assignments) | Stores attributes for assignments. There is one record in this table for each assignment. |
+|  | [courses](https://data-access-platform-api.s3.amazonaws.com/index.html#tag/courses) | Stores attributes for a course. |
+|  | [enrollments](https://data-access-platform-api.s3.amazonaws.com/index.html#tag/enrollments) | The relationship between a user and a course. That is, a list of users enrolled in a specific course and section. |
+|  | [scores](https://data-access-platform-api.s3.amazonaws.com/index.html#tag/scores) | Stores assignment group and course grades for students enrolled in a course. |
+|  | [users](https://data-access-platform-api.s3.amazonaws.com/index.html#tag/users) | Stores attributes for users. |
 |  |  |  |
 |  |  |  |

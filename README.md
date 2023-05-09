@@ -6,9 +6,9 @@
 
 [Canvas](https://www.instructure.com/canvas) is a K-12 and higher education Learning Management System (LMS), which offers a web-based solution to organizing student courses, learning progress and outcomes. This OEA Canvas module, originally developed by [Tasmania Department of Education](https://www.decyp.tas.gov.au/) in Tasmania, Australia, allows you to source data from the [Canvas Data v2 API](https://portal.inshosteddata.com/docs/api) <strong><em>[<- CHECK IF THIS IS STILL RELEVANT]</strong></em>. This enables administrators to retrieve data on course information, user activity data, assignment results, etc. The scope of this module is directed to pulling learning progress/outcomes and digital activity for analysis, through the use of the tables defined below.
 
-### [VISUAL NEEDS TO BE CHANGED]
+
 <p align="center">
-  <img src="https://github.com/cstohlmann/OpenEduAnalytics/blob/main/modules/module_catalog/Clever/docs/images/clever_data_ingestion_map.png" alt="Clever Data Ingestion Visual"/>
+  <img src="https://github.com/cstohlmann/oea-canvas-module/blob/main/docs/images/canvas_module_v0.2_overview.png" alt="Clever Data Ingestion Visual"/>
 </p>
 
 ## Problem Statement and Module Impact

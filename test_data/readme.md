@@ -1,7 +1,7 @@
 # Test data
 
-This module includes artificially generated data which matches the format of [Canvas API Resources](https://canvas.instructure.com/doc/api/all_resources.html).
-- x tables formatted in JSONs, as described in the Canvas data dictionary. Assets can be adapted to integrate ingestion/refinement functionality for more, different or less tables.
+This module includes artificially generated data which matches the format of [Canvas API Operations](https://data-access-platform-api.s3.amazonaws.com/index.html#tag/API).
+- 6 tables formatted in JSONs, as described in the Canvas data dictionary. Assets can be adapted to integrate ingestion/refinement functionality for more, different or less tables.
 
 <strong>Note:</strong> This module contains one set of test data - for mock higher education data. This module does not currently contain test data formatted as a K-12 institution.
 
@@ -9,7 +9,7 @@ This module includes artificially generated data which matches the format of [Ca
 
 ### [HEd Canvas Tables](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/test_data/hed_test_data)
 
-See full details on the [Canvas API Resources](https://canvas.instructure.com/doc/api/all_resources.html)
+See full details on the [Canvas API Operations](https://data-access-platform-api.s3.amazonaws.com/index.html#tag/API)
 
 | Domain | Table Name | Description |
 |-----------|-----------|-----------|

@@ -34,7 +34,7 @@ See full details on all [Canvas API Resources](https://canvas.instructure.com/do
 
 For the specific API calls for tables, see the table below.
 
-|Table Name | API Call |
+|Table Name | API Call(s) |
 |-----------|-----------|
 | [accounts](https://canvas.instructure.com/doc/api/accounts.html) |```GET /api/v1/accounts``` |
 | [accounts_lti](https://canvas.instructure.com/doc/api/accounts_(lti).html) | ```GET /api/lti/accounts/:account_id``` |

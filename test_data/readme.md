@@ -14,12 +14,12 @@ See full details on all [Canvas API Resources](https://canvas.instructure.com/do
 | Domain | Table Name | Description | 
 |-----------|-----------|-----------|
 | Roster/Accounts | [accounts](https://canvas.instructure.com/doc/api/accounts.html) | User accounts associated IDs (i.e., Canvas accounts) |
-| Roster/Accounts | [accounts_lti](https://canvas.instructure.com/doc/api/accounts_(lti).html) | <strong><em>NOTE:</strong> Not created or used at the moment</em>. User accounts associated IDs (i.e., LTI accounts) |
+| Roster/Accounts | [accounts_lti](https://canvas.instructure.com/doc/api/accounts_(lti).html) | <strong><em>NOTE: Not created or used at the moment</strong></em>. User accounts associated IDs (i.e., LTI accounts) |
 | Activity/Assignments | [assignments](https://canvas.instructure.com/doc/api/assignments.html) | Stores attributes for assignments. There is one record in this table for each assignment. |
 | Activity/Assignments/Submission Results | [assignment_submissions](https://canvas.instructure.com/doc/api/submissions.html) | Holds assignment submission results within a given course or section for users. | 
 | Activity/Assignments/Submission Results | [assignment_submission_summary](https://canvas.instructure.com/doc/api/submissions.html) | Holds summary of assignment submission results within a given course or section for users. | 
 | Roster/Academic Groups | [courses](https://canvas.instructure.com/doc/api/courses.html) | Stores attributes for a course. |
-| Roster/Affiliations | [course_memberships](https://canvas.instructure.com/doc/api/names_and_role.html) | <strong><em>NOTE:</strong> Not created or used at the moment</em>. The relationship between a user and a class. That is, a list of users enrolled in a specific course and section. Difference between this and enrollments is that this table contains the LTI mappings. | 
+| Roster/Affiliations | [course_memberships](https://canvas.instructure.com/doc/api/names_and_role.html) | <strong><em>NOTE: Not created or used at the moment</strong></em>. The relationship between a user and a class. That is, a list of users enrolled in a specific course and section. Difference between this and enrollments is that this table contains the LTI mappings. | 
 | Roster/Affiliations | [enrollments](https://canvas.instructure.com/doc/api/enrollments.html) | The relationship between a user and a class. That is, a list of users enrolled in a specific course and section. |
 | Roster/Affiliations | [enrollment_terms](https://canvas.instructure.com/doc/api/enrollment_terms.html) | The relationship between a user and and their enrollment term. | 
 | Activity/Modules | [modules](https://canvas.instructure.com/doc/api/modules.html) | List of modules (similar to lessons) in a course. |

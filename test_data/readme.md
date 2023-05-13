@@ -1,7 +1,7 @@
 # Test data
 
 This module includes artificially generated data which matches the format of the [Canvas API Calls](https://canvas.instructure.com/doc/api/index.html).
-- 18 tables formatted in JSONs, as described in the Canvas data dictionary. Assets can be adapted to integrate ingestion/refinement functionality for more, different or less tables.
+- 16 tables formatted in JSONs, as described in the Canvas data dictionary. Assets can be adapted to integrate ingestion/refinement functionality for more, different or less tables.
 
 <strong>Note:</strong> This module contains one set of test data - for mock higher education data. This module does not currently contain test data formatted as a K-12 institution.
 
@@ -14,14 +14,12 @@ See full details on all [Canvas API Resources](https://canvas.instructure.com/do
 | Domain | Table Name | Description | 
 |-----------|-----------|-----------|
 | Roster/Accounts | [accounts](https://canvas.instructure.com/doc/api/accounts.html) | User accounts associated IDs (i.e., Canvas accounts) |
-| Roster/Accounts | [accounts_lti](https://canvas.instructure.com/doc/api/accounts_(lti).html) | <strong><em>NOTE: Not created or used at the moment</strong></em>. User accounts associated IDs (i.e., LTI accounts) |
 | Activity/Assignments | [assignments](https://canvas.instructure.com/doc/api/assignments.html) | Stores attributes for assignments. There is one record in this table for each assignment. |
 | Activity/Assignments/Submission Results | [assignment_submissions](https://canvas.instructure.com/doc/api/submissions.html) | Holds assignment submission results within a given course or section for users. | 
 | Activity/Assignments/Submission Results | [assignment_submission_summary](https://canvas.instructure.com/doc/api/submissions.html) | Holds summary of assignment submission results within a given course or section for users. | 
 | Roster/Academic Groups | [courses](https://canvas.instructure.com/doc/api/courses.html) | Stores attributes for a course. |
-| Roster/Affiliations | [course_memberships](https://canvas.instructure.com/doc/api/names_and_role.html) | <strong><em>NOTE: Not created or used at the moment</strong></em>. The relationship between a user and a class. That is, a list of users enrolled in a specific course and section. Difference between this and enrollments is that this table contains the LTI mappings. | 
 | Roster/Affiliations | [enrollments](https://canvas.instructure.com/doc/api/enrollments.html) | The relationship between a user and a class. That is, a list of users enrolled in a specific course and section. |
-| Roster/Affiliations | [enrollment_terms](https://canvas.instructure.com/doc/api/enrollment_terms.html) | The relationship between a user and and their enrollment term. | 
+| Roster/Affiliations | [enrollment_terms](https://canvas.instructure.com/doc/api/enrollment_terms.html) | <strong><em>NOTE: No test data at the moment</strong></em>. The relationship between a user and and their enrollment term. | 
 | Activity/Modules | [modules](https://canvas.instructure.com/doc/api/modules.html) | List of modules (similar to lessons) in a course. |
 | Activity/Modules | [module_items](https://canvas.instructure.com/doc/api/modules.html) | List of module items in a course. |
 | Outcomes/Grade Results | [outcome_results](https://canvas.instructure.com/doc/api/outcome_results.html) | Holds assignment and/or quiz results within a given course for users. |
@@ -37,12 +35,10 @@ For the specific API calls for tables, see the table below.
 |Table Name | API Call(s) |
 |-----------|-----------|
 | [accounts](https://canvas.instructure.com/doc/api/accounts.html) |```GET /api/v1/accounts``` |
-| [accounts_lti](https://canvas.instructure.com/doc/api/accounts_(lti).html) | ```GET /api/lti/accounts/:account_id``` |
 | [assignments](https://canvas.instructure.com/doc/api/assignments.html) | ```GET /api/v1/courses/:course_id/assignments``` and/or ```GET /api/v1/courses/:course_id/assignment_groups/:assignment_group_id/assignments``` |
 | [assignment_submissions](https://canvas.instructure.com/doc/api/submissions.html) | ```GET /api/v1/courses/:course_id/assignments/:assignment_id/submissions``` and/or ```GET /api/v1/sections/:section_id/assignments/:assignment_id/submissions``` |
 | [assignment_submission_summary](https://canvas.instructure.com/doc/api/submissions.html) | ```GET /api/v1/courses/:course_id/assignments/:assignment_id/submission_summary``` and/or ```GET /api/v1/sections/:section_id/assignments/:assignment_id/submission_summary``` |
 | [courses](https://canvas.instructure.com/doc/api/courses.html) | ```GET /api/v1/courses``` |
-| [course_memberships](https://canvas.instructure.com/doc/api/names_and_role.html) |```GET /api/lti/courses/:course_id/names_and_roles``` |
 | [enrollments](https://canvas.instructure.com/doc/api/enrollments.html) | ```GET /api/v1/sections/:section_id/enrollments``` and/or ```GET /api/v1/courses/:course_id/enrollments``` |
 | [enrollment_terms](https://canvas.instructure.com/doc/api/enrollment_terms.html) | ```GET /api/v1/accounts/:account_id/terms``` |
 | [modules](https://canvas.instructure.com/doc/api/modules.html) | ```GET /api/v1/courses/:course_id/modules``` |

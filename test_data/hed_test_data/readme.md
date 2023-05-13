@@ -1,4 +1,4 @@
-> **Note.** Last Generation Dates: roster data - 5/11/2023
+> **Note.** Last Generation Dates: roster data - 5/11/2023, assignment activity data - 5/12/2023
 > 
 
 # Higher Ed. Test Data

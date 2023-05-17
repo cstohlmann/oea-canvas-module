@@ -24,16 +24,6 @@ This OEA Canvas module can aid any Canvas-using education systems in bringing th
 - VLE usage across teachers/school/region etc. - are some areas 'championing' digital learning, or do others need additional training & support.
 
 ## Module Setup Instructions
-<strong><em>[WHAT TASMANIA HAD; PROB WILL CHANGE SIGNIFICANTLY]</strong></em>
-
-- To use the module, you will require:
-  - An instance of Canvas with the data API's enabled.
-  - An Azure Subscription where we can deploy the Azure Durable Function used to download files.
-  - [Terraform CLI](https://www.terraform.io/cli) and [Azure Core Function Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cwindows%2Ccsharp%2Cportal%2Cbash) installed on your machine for the initial deployment.
-  - A Synapse environment as deployed by the base OEA install where the pipeline can be configured.
-
-Please see the [Setup docs](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Canvas_Data/docs/Setup.md) for deployment instructions.
-
 <p align="center">
   <img src="https://github.com/cstohlmann/oea-canvas-module/blob/main/docs/images/canvas_module_v0.2_setup_instructions.png" alt="Canvas v2.0 Setup Instructions"/>
 </p>

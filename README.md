@@ -1,4 +1,4 @@
-> **Note:** This module is currently unreleased, and is dependent on the OEA framework v0.8rc1
+> **Note:** This module is currently unreleased, and is dependent on the OEA framework v0.8
 
 <img align="right" height="75" src="https://github.com/microsoft/OpenEduAnalytics/blob/main/docs/pics/oea-logo-nobg.png">
 
@@ -12,7 +12,11 @@
 </p>
 
 ## Problem Statement and Module Impact
-Education instutions increasingly rely on virtual learning environments (VLEs) such as Canvas to deliver course content to students, perform both formative and summative assessments, and to support communication between staff and students when studying remotely. For many institutions, this became even more relevent with the COVID-19 pandemic given the need to support study-from-home scenarios where students may no longer be physically present in a classroom. Although the need for digital learning is no longer as necessary, there is still demand and significance for alternative forms of learning (e.g. website-use, digital application uses, etc.)
+Schools need to manage student learning, gain insights into learning behaviours and academic outcomes, and monitor individual and cohort progress over time through the aggregation and analysis of student learning data.  To achieve this, schools need a comprehensive system that can consume data from various sources and provide staff, parents and students with user-friendly dashboards that offer an in-depth view of a student's learning profile.
+
+Implementing the Canvas OEA module helps meet these challenges by gathering evidence on student outcomes from the learning management system for analysis and sharing through data-based visualizations and dashboards in Power BI.  This facilitates the monitoring of individual and cohort progress over time, identifying areas of strength as well as opportunities for improvement in subject-based planning and delivery.  The analytics produced from the data collected through Canvas OEA informs the learning and teaching approach, aids in developing customized instructional strategies for the individual learner, and fosters constructive and forward-looking conversations between staff, parents, and students.
+
+From an IT perspective, the Canvas OEA module provides a turn-key solution to take student progress data from the Canvas learning management system and put it in the hands of the school to support its core business of teaching and learning. 
 
 This OEA Canvas module can aid any Canvas-using education systems in bringing the data types described below to their Azure data lake for analysis. The [module Synapse pipeline](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/pipeline) will connect to the [Canvas API](https://canvas.instructure.com/doc/api/index.html) and pull JSON files for multiple student learning-related data tables. The [module Power BI template](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/powerbi) allows users to immediately explore the data and start developing custom dashboards enabling education systems to better understand the learning progress of students. <strong><em>[CHECK TO SEE WHETHER THIS IS STILL RELEVANT ->]</strong></em> This module will also give you access to all tables present in [Canvas Data v1](https://portal.inshosteddata.com/docs) including user activity, course information, assessment results, etc. Examples where you might use this data include:
 - Student/course engagement reporting - e.g. are students particpating in courses, do they need additional support, etc.
@@ -34,7 +38,7 @@ Please see the [Setup docs](https://github.com/microsoft/OpenEduAnalytics/blob/m
   <img src="https://github.com/cstohlmann/oea-canvas-module/blob/main/docs/images/canvas_module_v0.2_setup_instructions.png" alt="Canvas v2.0 Setup Instructions"/>
 </p>
 
-<ins><strong>Preparation:</ins></strong> This module currently leans on v0.8rc1 of the OEA framework. Ensure you have proper [Azure subscription and credentials](https://github.com/microsoft/OpenEduAnalytics/tree/main/framework) and setup of the [OEA framework](https://github.com/microsoft/OpenEduAnalytics/tree/main/framework#setup-of-framework-assets). This will include v0.8rc1 of the [OEA python class](https://github.com/microsoft/OpenEduAnalytics/blob/main/framework/synapse/notebook/OEA_py.ipynb). 
+<ins><strong>Preparation:</ins></strong> This module currently leans on v0.8 of the OEA framework. Ensure you have proper [Azure subscription and credentials](https://github.com/microsoft/OpenEduAnalytics/tree/main/framework) and setup of the [OEA framework](https://github.com/microsoft/OpenEduAnalytics/tree/main/framework#setup-of-framework-assets). This will include v0.8 of the [OEA python class](https://github.com/microsoft/OpenEduAnalytics/blob/main/framework/synapse/notebook/OEA_py.ipynb). 
 
 <ins><strong>Note:</ins></strong> 
 All the steps outlined below are applicable to deployment of this module with [test data](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/test_data). However, if you are doing a production deployment, this module currently does not provide guidance and assets will be need to be elevated for interactions with production data, depending on the Canvas database structure for an education system.
@@ -89,7 +93,9 @@ Dashboard Explanation | Digital Learning Outcomes Summary
 | [Microsoft 365 with Canvas](https://community.canvaslms.com/t5/Partner-Listings/Partner-Listing-Microsoft-Education/ta-p/437376) | Reference of Canvas can be used to interact with Microsoft 365 products. |
 | [Camvas Guides](https://community.canvaslms.com/t5/Canvas-Guides/ct-p/canvas_guides) | Reference documentation around guidance for Canvas implementation and use. | 
 | [Camvas LMS - REST API and Extensions Documentation](https://canvas.instructure.com/doc/api/all_resources.html) | Reference for all Canvas API Resources with additional schema details for tables. | 
-| [Camvas API Table-Schemas Information](https://data-access-platform-api.s3.amazonaws.com/index.html#tag/API) | Reference to learn about the schema details for Canvas tables landed into stage 1. | 
+| [Camvas API Table-Schemas Information](https://portal.inshosteddata.com/docs) | Reference to learn about the schema details for Canvas tables landed into stage 1. | 
+| [Details on Canvas Data 2](https://community.canvaslms.com/t5/The-Product-Blog/Canvas-Data-2-is-coming/ba-p/552312#:~:text=The%20Canvas%20Data%202%20offering,data%20across%20various%20Instructure%20products) | Reference to learning on Canvas Data 2. | 
+| [Details on Canvas Data Format](https://apigw-doc.s3.amazonaws.com/index.html) | Reference to learning on exported Canvas data format. | 
 
   
 ## Contributions from the Community

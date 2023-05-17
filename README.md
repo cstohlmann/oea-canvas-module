@@ -4,7 +4,7 @@
 
 # Canvas Module
 
-[Canvas](https://www.instructure.com/canvas) is a K-12 and higher education Learning Management System (LMS), which offers a web-based solution to organizing student courses, learning progress and outcomes. This OEA Canvas module allows you to source data from the [Canvas Data v2 API](https://portal.inshosteddata.com/docs/api) <strong><em>[<- CHECK IF THIS IS STILL RELEVANT/ACCURATE]</strong></em>. This enables administrators to retrieve data on course information, user activity data, assignment results, etc. The scope of this module is directed to pulling learning progress/outcomes and digital activity for analysis, through the use of the tables defined below.
+[Canvas](https://www.instructure.com/canvas) is a K-12 and higher education Learning Management System (LMS), which offers a web-based solution to organizing student courses, learning progress and outcomes. This OEA Canvas module allows you to source data from the [Canvas Data v2 API](https://portal.inshosteddata.com/docs). This enables administrators to retrieve data on course information, user activity data, assignment results, etc. The scope of this module is directed to pulling learning progress/outcomes and digital activity for analysis, through the use of the tables defined below.
 
 
 <p align="center">

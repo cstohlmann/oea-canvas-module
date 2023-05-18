@@ -14,18 +14,18 @@ See full details on all [Canvas API Resources](https://canvas.instructure.com/do
 | Domain | Table Name | Description | 
 |-----------|-----------|-----------|
 | Roster/Accounts | [accounts](https://canvas.instructure.com/doc/api/accounts.html) | Group accounts associated the education system, courses, sections, etc. (i.e., Canvas accounts). |
-| Activity/Assignments | [assignments](https://canvas.instructure.com/doc/api/assignments.html) | Stores attributes for assignments. There is one record in this table for each assignment. |
+| Activity/Assignments | [assignments](https://canvas.instructure.com/doc/api/assignments.html) | Attributes of assignments. There is one record in this table for each assignment. |
 | Activity/Assignments/Submission Results | [assignment_submissions](https://canvas.instructure.com/doc/api/submissions.html) | Holds assignment submission results within a given course or section for users. | 
 | Activity/Assignments/Submission Results | [assignment_submission_summary](https://canvas.instructure.com/doc/api/submissions.html) | Holds summary of assignment submission results within a given course or section for users. | 
-| Roster/Academic Groups | [courses](https://canvas.instructure.com/doc/api/courses.html) | Stores attributes for a course. |
-| Roster/Academic Groups | [course_sections](https://canvas.instructure.com/doc/api/sections.html) | List of sections of courses in Canvas. | 
+| Roster/Academic Groups | [courses](https://canvas.instructure.com/doc/api/courses.html) | Attributes of courses. |
+| Roster/Academic Groups | [course_sections](https://canvas.instructure.com/doc/api/sections.html) | Attributes of sections (of courses) in Canvas. | 
 | Roster/Affiliations | [enrollments](https://canvas.instructure.com/doc/api/enrollments.html) | The relationship between a user and a class. That is, a list of users enrolled in a specific course and section. |
 | Roster/Affiliations | [enrollment_terms](https://canvas.instructure.com/doc/api/enrollment_terms.html) | <strong><em>NOTE: No test data at the moment</strong></em>. The relationship between a user and and their enrollment term. | 
 | Activity/Modules | [modules](https://canvas.instructure.com/doc/api/modules.html) | List of modules (similar to lessons) in a course. |
 | Activity/Modules | [module_items](https://canvas.instructure.com/doc/api/modules.html) | List of module items in a course. |
 | Outcomes/Grade Results | [outcome_results](https://canvas.instructure.com/doc/api/outcome_results.html) | Holds assignment and/or quiz results within a given course for users. |
-| Activity/Quizzes | [quizzes](https://canvas.instructure.com/doc/api/quizzes.html) | Stores attributes for quizzes. There is one record in this table for each quiz. | 
-| Activity/Quizzes | [quiz_submissions](https://canvas.instructure.com/doc/api/quiz_submissions.html) | Stores attributes for quiz submissions. | 
+| Activity/Quizzes | [quizzes](https://canvas.instructure.com/doc/api/quizzes.html) | Attributes of quizzes. There is one record in this table for each quiz. | 
+| Activity/Quizzes | [quiz_submissions](https://canvas.instructure.com/doc/api/quiz_submissions.html) | Attributes of quiz submissions. | 
 | Outcomes/Grade Results | [result](https://canvas.instructure.com/doc/api/result.html) | Holds assignment and/or quiz results within a given course for users. | 
 | Roster/Role | [role](https://canvas.instructure.com/doc/api/roles.html) | List of roles within an account. See list of Canvas roles [here](https://canvas.instructure.com/doc/api/file.canvas_roles.html). | 
 | Roster/People | [users](https://canvas.instructure.com/doc/api/users.html) | Stores attributes for users. The latter API call is for user profiles (which contains LTI and SIS ) | 

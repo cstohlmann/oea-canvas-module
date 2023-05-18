@@ -20,7 +20,7 @@ See full details on all [Canvas API Resources](https://canvas.instructure.com/do
 | Roster/Academic Groups | [courses](https://canvas.instructure.com/doc/api/courses.html) | Attributes of courses. |
 | Roster/Academic Groups | [course_sections](https://canvas.instructure.com/doc/api/sections.html) | Attributes of sections (of courses) in Canvas. | 
 | Roster/Affiliations | [enrollments](https://canvas.instructure.com/doc/api/enrollments.html) | The relationship between a user and a class. That is, a list of users enrolled in a specific course and section. |
-| Roster/Affiliations | [enrollment_terms](https://canvas.instructure.com/doc/api/enrollment_terms.html) | <strong><em>NOTE: No test data at the moment</strong></em>. The relationship between a user and and their enrollment term. | 
+| Roster/Affiliations | [enrollment_terms](https://canvas.instructure.com/doc/api/enrollment_terms.html) | The relationship between courses, etc. and their associated enrollment term (e.g. semesters: Fall 2021 and Spring 2022). | 
 | Activity/Modules | [modules](https://canvas.instructure.com/doc/api/modules.html) | List of modules (similar to lessons) in a course. |
 | Activity/Modules | [module_items](https://canvas.instructure.com/doc/api/modules.html) | List of module items in a course. |
 | Outcomes/Grade Results | [outcome_results](https://canvas.instructure.com/doc/api/outcome_results.html) | Holds assignment and/or quiz results within a given course for users. |

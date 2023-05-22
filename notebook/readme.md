@@ -2,7 +2,7 @@
 
 This module has two sets of notebooks:
  1. One notebook is used to demonstrate an alternate method of data processing (i.e. ingesting and refining Canvas data) with examples of explorative possbilities.
- 2. The rest of the (2 other) notebooks are necessary to support the main [module pipeline](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/pipeline) for speeding up the ingestion process of the module tables and pseudonymizing/refining the data.
+ 2. The rest of the (3 other) notebooks are necessary to support the main [module pipeline](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Canvas/pipeline) for pre-processing, speeding up the ingestion process of the module tables and pseudonymizing/refining the data.
 
 All notebooks depend on the [OEA python class](https://github.com/microsoft/OpenEduAnalytics/blob/main/framework/synapse/notebook/OEA_py.ipynb) which is a part of the [OEA framework](https://github.com/microsoft/OpenEduAnalytics/tree/main/framework), and are automatically imported upon running the ```module_Canvas_v0.2rc1.zip``` setup script.
 
@@ -16,6 +16,9 @@ This Canvas module example notebook:
 Basic functions for data exploration and visualization from Stage 1 to Stage 2 data lakes are also included. Steps are clearly outlined and commented.
 
 ## Module Pipeline Support Notebooks
+### Module Ingestion Notebook: [Canvas_pre-processing.ipynb](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Canvas/notebook/Canvas_pre-processing.ipynb)
+
+Module notebook responsible for conversion of the original record-oriented JSONs to CSVs pre-ingestion. Once any ad hoc column-dtype conversion is complete, the table is overwritten in stage1.
 
 ### Module Ingestion Notebook: [Canvas_ingest.ipynb](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Canvas/notebook/Canvas_ingest.ipynb)
 

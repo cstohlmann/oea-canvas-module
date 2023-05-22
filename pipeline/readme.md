@@ -17,6 +17,8 @@ Module Pipeline for Test Data  | Module Pipeline for Production Data
 
 For production data, this module pipeline can be automatically triggered (i.e. daily or weekly) to keep your Synapse data lake up-to-date.
 
+<strong><em>Important note: The pipeline for production data is not currently functional and is largely incomplete.</strong></em>
+
 ## Pipeline Setup Instructions
 
 Two sets of instructions are included:

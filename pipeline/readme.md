@@ -35,7 +35,7 @@ Two sets of instructions are included:
 ![](https://github.com/cstohlmann/oea-moodle-module/blob/main/docs/images/moodle_v0.1_instructions_p1.png)
 
 4. Explore the pipeline as desired for any additional changes to landing, ingesting, and refining the test data.
-   * <strong><em>NOTE:</strong></em> You may have to attach notebook(s) to Spark pools, if not automatically connected following package installation. This is done by opening the notebooks used in the pipeline, and checking that the top header where Azure Synapse notebooks are attached in the "Attach to" field. Otherwise, there will be a notification "Please select a Spark pool to attach before running cell!" Manually attach this notebook to a Spark pool.
+   * <strong><em>NOTE:</strong></em> You may have to attach notebook(s) to Spark pools, if not automatically connected following module installation. This is done by opening the notebooks used in the pipeline, and checking that the top header where Azure Synapse notebooks are attached in the "Attach to" field. Otherwise, there will be a notification "Please select a Spark pool to attach before running cell!" Manually attach this notebook to a Spark pool.
 ![](https://github.com/cstohlmann/oea-moodle-module/blob/main/docs/images/moodle_v0.1_instructions_p2.png)
 
 5. Commit/Publish any changes and trigger the pipeline manually.

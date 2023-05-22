@@ -1,0 +1,219 @@
+{
+    "name": "1_land_canvas_prod_data",
+    "properties": {
+        "activities": [
+            {
+                "name": "If ACCESS_TOKEN provided",
+                "description": "if Canvas ACCESS_TOKEN is not provided, POST a request to Canvas using user credentials and extract the ACCESS_TOKEN",
+                "type": "IfCondition",
+                "dependsOn": [
+                    {
+                        "activity": "Set ACCESS_TOKEN",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "expression": {
+                        "value": "@not(equals(variables('ACCESS_TOKEN'), ''))",
+                        "type": "Expression"
+                    },
+                    "ifFalseActivities": [
+                        {
+                            "name": "Get Canvas ACCESS_TOKEN",
+                            "type": "GetMetadata",
+                            "dependsOn": [],
+                            "policy": {
+                                "timeout": "0.12:00:00",
+                                "retry": 0,
+                                "retryIntervalInSeconds": 30,
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "userProperties": [],
+                            "typeProperties": {
+                                "dataset": {
+                                    "referenceName": "DS_HTTP_binary",
+                                    "type": "DatasetReference",
+                                    "parameters": {
+                                        "URL": "https://api-gateway.instructure.com/ids/auth/login"
+                                    }
+                                },
+                                "fieldList": [],
+                                "storeSettings": {
+                                    "type": "HttpReadSettings",
+                                    "requestMethod": "POST",
+                                    "requestBody": {
+                                        "value": "ACCESS_TOKEN=$ (curl -- request POST https://api-gateway.instructure.com/ids/auth/login \\\n--user \"$@{pipeline().parameters.CLIENT_ID}:@{pipeline().parameters.SECRET}\" \\\n--data-urlencode 'grant_type=client_credentials' | jq -r '.access_token')\n\necho $ACCESS_TOKEN",
+                                        "type": "Expression"
+                                    },
+                                    "requestTimeout": ""
+                                },
+                                "formatSettings": {
+                                    "type": "BinaryReadSettings"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Set output as temp_arr",
+                            "description": "Uses the output of the Canvas POST request and sets the temp_arr variable",
+                            "type": "SetVariable",
+                            "dependsOn": [
+                                {
+                                    "activity": "Get Canvas ACCESS_TOKEN",
+                                    "dependencyConditions": [
+                                        "Succeeded"
+                                    ]
+                                }
+                            ],
+                            "userProperties": [],
+                            "typeProperties": {
+                                "variableName": "temp_arr",
+                                "value": {
+                                    "value": "@split(string(activity('Get Canvas ACCESS_TOKEN').output), ',')",
+                                    "type": "Expression"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Set temp_str",
+                            "description": "After splitting the JSON response, get the following string '\"access_token\": \"token_string\"'. We want the token_string.",
+                            "type": "SetVariable",
+                            "dependsOn": [
+                                {
+                                    "activity": "Set output as temp_arr",
+                                    "dependencyConditions": [
+                                        "Succeeded"
+                                    ]
+                                }
+                            ],
+                            "userProperties": [],
+                            "typeProperties": {
+                                "variableName": "temp_str",
+                                "value": {
+                                    "value": "@first(variables('temp_arr'))",
+                                    "type": "Expression"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Again set temp_arr",
+                            "description": "We now extract '\"access_token\": \"token_string\"' as the array [\"access_token\", \"token_string\"].",
+                            "type": "SetVariable",
+                            "dependsOn": [
+                                {
+                                    "activity": "Set temp_str",
+                                    "dependencyConditions": [
+                                        "Succeeded"
+                                    ]
+                                }
+                            ],
+                            "userProperties": [],
+                            "typeProperties": {
+                                "variableName": "temp_arr",
+                                "value": {
+                                    "value": "@split(variables('temp_str'), ':')",
+                                    "type": "Expression"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Set ACCESS_TOKEN",
+                            "description": "Finally, from the array [\"access_token\", \"token_string\"],isolate \"token_string\". \"access_token\" is the JSON field.",
+                            "type": "SetVariable",
+                            "dependsOn": [
+                                {
+                                    "activity": "Again set temp_arr",
+                                    "dependencyConditions": [
+                                        "Succeeded"
+                                    ]
+                                }
+                            ],
+                            "userProperties": [],
+                            "typeProperties": {
+                                "variableName": "ACCESS_TOKEN",
+                                "value": {
+                                    "value": "@last(variables('temp_arr'))",
+                                    "type": "Expression"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Set ACCESS_TOKEN",
+                "type": "SetVariable",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "variableName": "ACCESS_TOKEN",
+                    "value": {
+                        "value": "@pipeline().parameters.ACCESS_TOKEN",
+                        "type": "Expression"
+                    }
+                }
+            }
+        ],
+        "parameters": {
+            "dataShareDirectory": {
+                "type": "string"
+            },
+            "workspace": {
+                "type": "string",
+                "defaultValue": "dev"
+            },
+            "version": {
+                "type": "string",
+                "defaultValue": "2.0"
+            },
+            "CLIENT_ID": {
+                "type": "string"
+            },
+            "SECRET": {
+                "type": "string"
+            },
+            "ACCESS_TOKEN": {
+                "type": "string"
+            },
+            "tables_to_get": {
+                "type": "array"
+            }
+        },
+        "variables": {
+            "date_folder": {
+                "type": "String",
+                "defaultValue": "0"
+            },
+            "defaultFilename": {
+                "type": "String"
+            },
+            "pipeline_children": {
+                "type": "String"
+            },
+            "source_path": {
+                "type": "String"
+            },
+            "latest_runtime": {
+                "type": "String"
+            },
+            "ACCESS_TOKEN": {
+                "type": "String"
+            },
+            "temp_arr": {
+                "type": "Array"
+            },
+            "temp_str": {
+                "type": "String"
+            }
+        },
+        "folder": {
+            "name": "Canvas Module/v0.2"
+        },
+        "annotations": [],
+        "lastPublishTime": "2023-05-17T15:12:14Z"
+    },
+    "type": "Microsoft.Synapse/workspaces/pipelines"
+}

@@ -1,0 +1,2 @@
+{"label":"Teacher","role":"TeacherEnrollment","base_role_type":"AccountMembership","account":"","workflow_state":"active","permissions":""}
+{"label":"Student","role":"StudentEnrollment","base_role_type":"AccountMembership","account":"","workflow_state":"active","permissions":""}

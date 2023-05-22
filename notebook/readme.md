@@ -16,7 +16,7 @@ This Canvas module example notebook:
 Basic functions for data exploration and visualization from Stage 1 to Stage 2 data lakes are also included. Steps are clearly outlined and commented.
 
 ## Module Pipeline Support Notebooks
-### Module Ingestion Notebook: [Canvas_pre-processing.ipynb](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Canvas/notebook/Canvas_pre-processing.ipynb)
+### Module Pre-Processing Notebook: [Canvas_pre-processing.ipynb](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_catalog/Canvas/notebook/Canvas_pre-processing.ipynb)
 
 Module notebook responsible for conversion of the original record-oriented JSONs to CSVs pre-ingestion. Once any ad hoc column-dtype conversion is complete, the table is overwritten in stage1.
 

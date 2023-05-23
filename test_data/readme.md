@@ -1,7 +1,7 @@
 # Test data
 
 This module includes artificially generated data which matches the format of the [Canvas API Calls](https://canvas.instructure.com/doc/api/index.html).
-- 16 tables formatted in JSONs, as described in the Canvas data dictionary. Assets can be adapted to integrate ingestion/refinement functionality for more, different or less tables.
+- 14 tables formatted in JSONs, as described in the Canvas data dictionary. Assets can be adapted to integrate ingestion/refinement functionality for more, different or less tables.
 
 <strong>Note:</strong> This module contains one set of test data - for mock higher education data. This module does not currently contain test data formatted as a K-12 institution.
 
@@ -23,10 +23,10 @@ See full details on all [Canvas API Resources](https://canvas.instructure.com/do
 | Roster/Affiliations | [enrollment_terms](https://canvas.instructure.com/doc/api/enrollment_terms.html) | The relationship between courses, etc. and their associated enrollment term (e.g. semesters: Fall 2021 and Spring 2022). | 
 | Activity/Modules | [modules](https://canvas.instructure.com/doc/api/modules.html) | List of modules (similar to lessons) in a course. |
 | Activity/Modules | [module_items](https://canvas.instructure.com/doc/api/modules.html) | List of module items in a course. |
-| Outcomes/Grade Results | [outcome_results](https://canvas.instructure.com/doc/api/outcome_results.html) | Holds assignment and/or quiz results within a given course for users. |
+| Outcomes/Grade Results | [outcome_results](https://canvas.instructure.com/doc/api/outcome_results.html) | <strong><em>Note: No test data at the moment.</strong></em> Holds assignment and/or quiz results within a given course for users. |
 | Activity/Quizzes | [quizzes](https://canvas.instructure.com/doc/api/quizzes.html) | Attributes of quizzes. There is one record in this table for each quiz. | 
 | Activity/Quizzes | [quiz_submissions](https://canvas.instructure.com/doc/api/quiz_submissions.html) | Attributes of quiz submissions. | 
-| Outcomes/Grade Results | [result](https://canvas.instructure.com/doc/api/result.html) | Holds assignment and/or quiz results within a given course for users. | 
+| Outcomes/Grade Results | [result](https://canvas.instructure.com/doc/api/result.html) | <strong><em>Note: No test data at the moment.</strong></em> Holds assignment and/or quiz results within a given course for users. | 
 | Roster/Role | [role](https://canvas.instructure.com/doc/api/roles.html) | List of roles within an account. See list of Canvas roles [here](https://canvas.instructure.com/doc/api/file.canvas_roles.html). | 
 | Roster/People | [users](https://canvas.instructure.com/doc/api/users.html) | Stores attributes for users. The latter API call is for user profiles (which contains LTI and SIS ) | 
 

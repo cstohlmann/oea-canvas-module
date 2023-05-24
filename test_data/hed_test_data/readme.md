@@ -1,4 +1,4 @@
-> **Note.** Last Generation Dates: roster data - 5/18/2023, modules activity data - 5/24/2023, assignment activity data - 5/12/2023
+> **Note.** Last Generation Dates: roster data - 5/18/2023, modules and quizzes activity data - 5/24/2023, assignment activity data - 5/12/2023
 > 
 
 # Higher Ed. Canvas Test Data
@@ -11,6 +11,7 @@ Tables are grouped as described below:
 | -------- | -------- |
 | roster data | accounts, course_sections, courses, enrollment_terms, enrollments, roles, users |
 | modules activity data | content_tags, context_modules |
+| quizzes activity data | quizzes, quiz_submissions |
 | assignment activity data | assignments, submissions |
 
 This generated test data set is an attempt to mimic the Canvas Data v2 table data as described in the following resources:

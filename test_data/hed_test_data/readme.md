@@ -5,6 +5,14 @@
 
 <em>Important note</em>: Still under development. The activity test data may not be completely realistic and the roster test data may not be exactly formatted as nested arrays possibly seen in production data; this is expected to be updated soon.
 
+Tables are grouped as described below:
+
+| Tables Group | Tables |
+| -------- | -------- |
+| roster data | accounts, course_sections, courses, enrollment_terms, enrollments, roles, users |
+| modules activity data | content_tags, context_modules |
+| assignment activity data | assignments, submissions |
+
 This generated test data set is an attempt to mimic the Canvas Data v2 table data as described in the following resources:
 
 | Resource | Notes |

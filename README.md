@@ -87,8 +87,8 @@ Dashboard Explanation | Digital Learning Outcomes Summary
 | [Details on Canvas Data 2](https://community.canvaslms.com/t5/The-Product-Blog/Canvas-Data-2-is-coming/ba-p/552312#:~:text=The%20Canvas%20Data%202%20offering,data%20across%20various%20Instructure%20products) | Reference to learning on Canvas Data 2. | 
 | [Canvas API Info](https://apigw-doc.s3.amazonaws.com/index.html) | Reference for understanding Canvas API calls and schema-linking. | 
 | [Canvas Data v2 vs. Canvas Data v1 Schemas](https://docs.google.com/spreadsheets/d/1kqCXAD9K45L0QeEtbuuMAFp2fW8o0oC8EBzJf58SjrY/edit#gid=2091525305) | Reference for understanding the various schema structures of Canvas tables of CD2 vs. CD1. <em><strong>(Note: This was the primary source used to generate this module's test data.)</em></strong> |
-| [Camvas LMS - REST API and Extensions Documentation](https://canvas.instructure.com/doc/api/all_resources.html) | Reference for all Canvas API Resources with additional schema details for CD1 (Canvas Data v1) tables. | 
-| [Camvas API Table-Schemas Information](https://portal.inshosteddata.com/docs) | Another reference on the schema details for Canvas tables landed into stage 1. | 
+| [Canvas LMS - REST API and Extensions Documentation](https://canvas.instructure.com/doc/api/all_resources.html) | Reference for all Canvas API Resources with additional schema details for CD1 (Canvas Data v1) tables. | 
+| [Canvas API Table-Schemas Information](https://portal.inshosteddata.com/docs) | Another reference on the schema details for Canvas tables landed into stage 1. | 
 
   
 ## Contributions from the Community
